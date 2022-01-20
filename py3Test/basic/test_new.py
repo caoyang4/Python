@@ -19,13 +19,16 @@ class A:
         self.attribute = attribute
 
 
-a = A("abc")
-b = A("xyz")
-print(id(a))
-print(id(b))
+print("A test")
+a1 = A("abc")
+a2 = A("xyz")
+a3 = A("abc")
+print(id(a1))
+print(id(a2))
+print(id(a3))
 
 
-class demoClass:
+class B:
     instances_created = 0
 
     def __new__(cls, *args, **kwargs):
@@ -40,7 +43,32 @@ class demoClass:
         self.attribute = attribute
 
 
-test1 = demoClass("abc")
-test2 = demoClass("xyz")
-print(test1.number, test1.instances_created)
-print(test2.number, test2.instances_created)
+print("\n")
+print("B test")
+b1 = B("abc")
+b2 = B("abc")
+b3 = B("abc")
+print(id(b1))
+print(id(b2))
+print(id(b3))
+print(b1.number, b1.instances_created)
+print(b2.number, b2.instances_created)
+print(b3.number, b3.instances_created)
+
+
+class C:
+    __instance = None
+
+    def __init__(self, attribute):
+        if C.__instance is None:
+            print("__init__")
+        self.attribute = attribute
+
+
+print("\n")
+print("C test")
+c1 = C("abc")
+c2 = C("abc")
+print(id(c1))
+print(id(c2))
+
