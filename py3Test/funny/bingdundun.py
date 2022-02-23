@@ -29,6 +29,7 @@ turtle.circle(-37, 160)
 turtle.circle(-20, 50)
 turtle.circle(-200, 30)
 turtle.end_fill()
+
 # 轮廓
 # 头顶
 turtle.penup()
