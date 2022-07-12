@@ -72,3 +72,13 @@ c2 = C("abc")
 print(id(c1))
 print(id(c2))
 
+
+class D:
+    def __init__(self, a=1, b=2, c=3):
+        self.a = a
+        self.b = b
+        self.c = c
+
+
+d = D(a=2, c=5)
+print(d.c)
